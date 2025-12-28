@@ -1,0 +1,17 @@
+{
+	"name": "microps",
+	"image": "ubuntu:24.04",
+	"privileged": true,
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-vscode.cpptools",
+				"ms-vscode.makefile-tools"
+			],
+			"settings": {
+				"workbench.colorTheme": "GitHub Light"
+			}
+		}
+	},
+	"postCreateCommand": "apt-get update && apt-get install -y build-essential gdb git iproute2 iputils-ping net-tools netcat-openbsd linux-headers-generic && make"
+}
